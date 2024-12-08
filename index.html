@@ -31,10 +31,9 @@
         display: flex;
         flex-direction: column;
         height: 100%;
+        min-height: 100vh;
         margin: 0;
         background-color: #fdf8e9;
-        padding: 0 15px;
-        padding-bottom: 30px;
         font-family: "Nunito", sans-serif;
         font-optical-sizing: auto;
         font-weight: 400;
@@ -51,6 +50,7 @@
       .checkbox-container {
         background-color: #fff;
         border-radius: 10px;
+        margin: 0 15px;
       }
 
       .checkbox-wrapper {
@@ -259,17 +259,17 @@
       }
 
       .payment-section {
-        display: flex;
+        display: none;
         justify-content: space-between;
         gap: 10px;
         align-items: center;
-        margin: 15px 0;
+        margin: 15px;
       }
 
       .payment-section-wrapper {
         display: flex;
         align-items: center;
-        background-color: #fff;
+        background-color: #fdf8e9;
         padding: 6px;
         border-radius: 10px;
       }
@@ -333,14 +333,32 @@
         }
       }
 
+      .site-footer {
+        position: sticky;
+        bottom: 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        background-color: #fff;
+        width: 100%;
+        padding: 20px;
+      }
+
       .price-button {
         width: 100%;
         padding: 10px 0;
-        margin-bottom: 20px;
+        text-align: center;
         background-color: #fe8c67;
-        border: none;
         border-radius: 10px;
+        font-family: "Nunito", sans-serif;
         color: #fff;
+        border: none;
+        /* font-size: 10px; */
+      }
+
+      .price-button span {
+        display: block;
+        font-weight: 700;
+        font-size: 13px;
       }
     </style>
   </head>
@@ -351,97 +369,185 @@
       width="100"
       style="margin: 0 auto; margin-bottom: 20px"
     />
+
     <h1>Lalu PREMIUM</h1>
+
     <div class="checkbox-container">
-      <div class="checkbox-wrapper">
-        <div class="checkbox-wrapper-start">
-          <!-- Checkbox start -->
-          <div class="checkbox-wrapper-4">
-            <input
-              class="inp-cbx"
-              id="morning1"
-              type="checkbox"
-              name="checkbox"
-            />
-            <label class="cbx" for="morning1"
-              ><span>
-                <svg width="12px" height="10px">
-                  <use xlink:href="#check-4"></use></svg></span
-            ></label>
-            <svg class="inline-svg">
-              <symbol id="check-4" viewbox="0 0 12 10">
-                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-              </symbol>
-            </svg>
+      <div style="transition: 0.5s ease-in-out">
+        <div class="checkbox-wrapper">
+          <div class="checkbox-wrapper-start">
+            <!-- Checkbox start -->
+            <div class="checkbox-wrapper-4">
+              <input
+                class="inp-cbx"
+                id="morning1"
+                type="checkbox"
+                name="checkbox"
+              />
+              <label class="cbx" for="morning1"
+                ><span>
+                  <svg width="12px" height="10px">
+                    <use xlink:href="#check-4"></use></svg></span
+              ></label>
+              <svg class="inline-svg">
+                <symbol id="check-4" viewbox="0 0 12 10">
+                  <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                </symbol>
+              </svg>
+            </div>
+            <!-- Checkbox end -->
+            <div>
+              <p class="term">1 yillik</p>
+              <p class="prosent">-63%</p>
+              <p class="price">129 900 UZS <span>360 000 UZS</span></p>
+            </div>
           </div>
-          <!-- Checkbox end -->
-          <div>
-            <p class="term">1 yillik</p>
-            <p class="prosent">-63%</p>
-            <p class="price">129 900 UZS <span>360 000 UZS</span></p>
-          </div>
+          <h2 class="month-price">10 900 UZS/oy</h2>
         </div>
-        <h2 class="month-price">10 900 UZS/oy</h2>
+
+        <section class="payment-section">
+          <div class="payment-section-wrapper radio">
+            <input id="radio-1" name="radio" type="radio" />
+            <label for="radio-1" class="radio-label">
+              <img
+                src="./payme.png"
+                alt=""
+                width="110"
+                height="50"
+                style="object-fit: cover"
+            /></label>
+          </div>
+          <div class="payment-section-wrapper radio">
+            <input id="radio-2" name="radio" type="radio" />
+            <label for="radio-2" class="radio-label">
+              <img
+                src="./click.png"
+                alt=""
+                width="110"
+                height="50"
+                style="object-fit: cover"
+              />
+            </label>
+          </div>
+        </section>
       </div>
 
-      <div class="checkbox-wrapper">
-        <div class="checkbox-wrapper-start">
-          <!-- Checkbox start -->
-          <div class="checkbox-wrapper-4">
-            <input
-              class="inp-cbx"
-              id="morning2"
-              type="checkbox"
-              name="checkbox"
-            />
-            <label class="cbx" for="morning2"
-              ><span>
-                <svg width="12px" height="10px">
-                  <use xlink:href="#check-4"></use></svg></span
-            ></label>
-            <svg class="inline-svg">
-              <symbol id="check-4" viewbox="0 0 12 10">
-                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-              </symbol>
-            </svg>
+      <div>
+        <div class="checkbox-wrapper">
+          <div class="checkbox-wrapper-start">
+            <!-- Checkbox start -->
+            <div class="checkbox-wrapper-4">
+              <input
+                class="inp-cbx"
+                id="morning2"
+                type="checkbox"
+                name="checkbox"
+              />
+              <label class="cbx" for="morning2"
+                ><span>
+                  <svg width="12px" height="10px">
+                    <use xlink:href="#check-4"></use></svg></span
+              ></label>
+              <svg class="inline-svg">
+                <symbol id="check-4" viewbox="0 0 12 10">
+                  <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                </symbol>
+              </svg>
+            </div>
+            <!-- Checkbox end -->
+            <div>
+              <p class="term">6 oylik</p>
+              <p class="prosent">-44%</p>
+              <p class="price">99 900 UZS <span>179 000 UZS</span></p>
+            </div>
           </div>
-          <!-- Checkbox end -->
-          <div>
-            <p class="term">6 oylik</p>
-            <p class="prosent">-44%</p>
-            <p class="price">99 900 UZS <span>179 000 UZS</span></p>
-          </div>
+          <h2 class="month-price">16 600 UZS/oy</h2>
         </div>
-        <h2 class="month-price">16 600 UZS/oy</h2>
+
+        <section class="payment-section">
+          <div class="payment-section-wrapper radio">
+            <input id="radio-3" name="radio" type="radio" />
+            <label for="radio-3" class="radio-label">
+              <img
+                src="./payme.png"
+                alt=""
+                width="110"
+                height="50"
+                style="object-fit: cover"
+            /></label>
+          </div>
+
+          <div class="payment-section-wrapper radio">
+            <input id="radio-4" name="radio" type="radio" />
+            <label for="radio-4" class="radio-label">
+              <img
+                src="./click.png"
+                alt=""
+                width="110"
+                height="50"
+                style="object-fit: cover"
+              />
+            </label>
+          </div>
+        </section>
       </div>
 
-      <div class="checkbox-wrapper">
-        <div class="checkbox-wrapper-start">
-          <!-- Checkbox start -->
-          <div class="checkbox-wrapper-4">
-            <input
-              class="inp-cbx"
-              id="morning3"
-              type="checkbox"
-              name="checkbox"
-            />
-            <label class="cbx" for="morning3"
-              ><span>
-                <svg width="12px" height="10px">
-                  <use xlink:href="#check-4"></use></svg></span
-            ></label>
-            <svg class="inline-svg">
-              <symbol id="check-4" viewbox="0 0 12 10">
-                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-              </symbol>
-            </svg>
+      <div>
+        <div class="checkbox-wrapper">
+          <div class="checkbox-wrapper-start">
+            <!-- Checkbox start -->
+            <div class="checkbox-wrapper-4">
+              <input
+                class="inp-cbx"
+                id="morning3"
+                type="checkbox"
+                name="checkbox"
+              />
+              <label class="cbx" for="morning3"
+                ><span>
+                  <svg width="12px" height="10px">
+                    <use xlink:href="#check-4"></use></svg></span
+              ></label>
+              <svg class="inline-svg">
+                <symbol id="check-4" viewbox="0 0 12 10">
+                  <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                </symbol>
+              </svg>
+            </div>
+            <!-- Checkbox end -->
+            <div>
+              <p class="term">1 oylik</p>
+            </div>
           </div>
-          <!-- Checkbox end -->
-          <div>
-            <p class="term">1 oylik</p>
-          </div>
+          <h2 class="month-price">29 900 UZS/oy</h2>
         </div>
-        <h2 class="month-price">29 900 UZS/oy</h2>
+
+        <section class="payment-section">
+          <div class="payment-section-wrapper radio">
+            <input id="radio-5" name="radio" type="radio" />
+            <label for="radio-5" class="radio-label">
+              <img
+                src="./payme.png"
+                alt=""
+                width="110"
+                height="50"
+                style="object-fit: cover"
+            /></label>
+          </div>
+
+          <div class="payment-section-wrapper radio">
+            <input id="radio-6" name="radio" type="radio" />
+            <label for="radio-6" class="radio-label">
+              <img
+                src="./click.png"
+                alt=""
+                width="110"
+                height="50"
+                style="object-fit: cover"
+              />
+            </label>
+          </div>
+        </section>
       </div>
     </div>
 
@@ -502,38 +608,19 @@
       </div>
     </div>
 
-    <section class="payment-section">
-      <div class="payment-section-wrapper radio">
-        <input id="radio-1" name="radio" type="radio" />
-        <label for="radio-1" class="radio-label">
-          <img
-            src="./payme.png"
-            alt=""
-            width="110"
-            height="50"
-            style="object-fit: cover"
-        /></label>
-      </div>
+    <footer class="site-footer">
+      <button class="price-button">
+        <span class="price-text"></span> Obuna bo'lish
+      </button>
+    </footer>
 
-      <div class="payment-section-wrapper radio">
-        <input id="radio-2" name="radio" type="radio" />
-        <label for="radio-2" class="radio-label">
-          <img
-            src="./click.png"
-            alt=""
-            width="110"
-            height="50"
-            style="object-fit: cover"
-          />
-        </label>
-      </div>
-    </section>
-
-    <button class="price-button">Obuna bo'lish</button>
     <script>
       const elCheckboxes = document.querySelectorAll(".inp-cbx");
       const elTerms = document.querySelectorAll(".term");
       const elMonthPrice = document.querySelectorAll(".month-price");
+      const elPayments = document.querySelectorAll(".payment-section");
+      const elPaymentButton = document.querySelector(".price-button");
+      const elPaymentButtonText = document.querySelector(".price-text");
 
       elCheckboxes.forEach((checkbox, index) => {
         checkbox.addEventListener("change", () => {
@@ -543,16 +630,28 @@
               cb.checked = false;
               elTerms[i].classList.remove("selected");
               elMonthPrice[i].classList.remove("selected");
+              elPayments[i].style.display = "none";
+              elPaymentButton.style.fontSize = "13,3px";
             }
           });
 
           // Add 'selected' class to the current term if checked
           if (checkbox.checked) {
+            if (index === 0) {
+              elPaymentButtonText.textContent = "129 990 UZS";
+            } else if (index === 1) {
+              elPaymentButtonText.textContent = "99 990 UZS";
+            } else {
+              elPaymentButtonText.textContent = "29 990 UZS";
+            }
             elTerms[index].classList.add("selected");
             elMonthPrice[index].classList.add("selected");
+            elPayments[index].style.display = "flex";
+            elPaymentButton.style.fontSize = "10px";
           } else {
             elTerms[index].classList.remove("selected");
             elMonthPrice[index].classList.remove("selected");
+            elPayments[index].style.display = "none";
           }
         });
       });
