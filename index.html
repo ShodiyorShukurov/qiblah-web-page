@@ -260,11 +260,13 @@
       }
 
       .payment-section {
+        width: 100%;
         display: none;
-        justify-content: space-between;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 10px;
         align-items: center;
-        margin: 15px;
+        margin: 15px 0;
       }
 
       .payment-section-wrapper {
@@ -373,247 +375,293 @@
 
     <h1>Lalu PREMIUM</h1>
 
-    <div class="checkbox-container">
-      <div style="transition: 0.5s ease-in-out">
-        <div class="checkbox-wrapper">
-          <div class="checkbox-wrapper-start">
-            <!-- Checkbox start -->
-            <div class="checkbox-wrapper-4">
-              <input
-                class="inp-cbx"
-                id="morning1"
-                type="checkbox"
-                name="checkbox"
-              />
-              <label class="cbx" for="morning1"
-                ><span>
-                  <svg width="12px" height="10px">
-                    <use xlink:href="#check-4"></use></svg></span
-              ></label>
-              <svg class="inline-svg">
-                <symbol id="check-4" viewbox="0 0 12 10">
-                  <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                </symbol>
-              </svg>
+    <form>
+      <div class="checkbox-container">
+        <div style="transition: 0.5s ease-in-out">
+
+          <div class="checkbox-wrapper">
+            <div class="checkbox-wrapper-start">
+              <!-- Checkbox start -->
+              <div class="checkbox-wrapper-4">
+                <input
+                  class="inp-cbx"
+                  id="morning1"
+                  type="checkbox"
+                  name="checkbox"
+                  required
+                />
+                <label class="cbx" for="morning1"
+                  ><span>
+                    <svg width="12px" height="10px">
+                      <use xlink:href="#check-4"></use></svg></span
+                ></label>
+                <svg class="inline-svg">
+                  <symbol id="check-4" viewbox="0 0 12 10">
+                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                  </symbol>
+                </svg>
+              </div>
+              <!-- Checkbox end -->
+              <div>
+                <p class="term">1 yillik</p>
+                <p class="prosent">-63%</p>
+                <p class="price">129 900 UZS <span>360 000 UZS</span></p>
+              </div>
             </div>
-            <!-- Checkbox end -->
-            <div>
-              <p class="term">1 yillik</p>
-              <p class="prosent">-63%</p>
-              <p class="price">129 900 UZS <span>360 000 UZS</span></p>
-            </div>
+            <h2 class="month-price">10 900 UZS/oy</h2>
           </div>
-          <h2 class="month-price">10 900 UZS/oy</h2>
+
+          <section class="payment-section">
+            <div class="payment-section-wrapper radio">
+              <input id="radio-1" name="radio" type="radio" />
+              <label for="radio-1" class="radio-label">
+                <img
+                  src="./payme.png"
+                  alt=""
+                  width="60"
+                  height="40"
+                  style="object-fit: cover"
+              /></label>
+            </div>
+            <div class="payment-section-wrapper radio">
+              <input id="radio-2" name="radio" type="radio" />
+              <label for="radio-2" class="radio-label">
+                <img
+                  src="./click.png"
+                  alt=""
+                  width="60"
+                  height="40"
+                  style="object-fit: cover"
+                />
+              </label>
+            </div>
+
+            <div class="payment-section-wrapper radio">
+              <input id="radio-3" name="radio" type="radio" />
+              <label for="radio-3" class="radio-label">
+                <img
+                  src="./Uzum.png"
+                  alt=""
+                  width="60"
+                  height="40"
+                  style="object-fit: cover"
+                />
+              </label>
+            </div>
+          </section>
         </div>
 
-        <section class="payment-section">
-          <div class="payment-section-wrapper radio">
-            <input id="radio-1" name="radio" type="radio" />
-            <label for="radio-1" class="radio-label">
-              <img
-                src="./payme.png"
-                alt=""
-                width="110"
-                height="50"
-                style="object-fit: cover"
-            /></label>
-          </div>
-          <div class="payment-section-wrapper radio">
-            <input id="radio-2" name="radio" type="radio" />
-            <label for="radio-2" class="radio-label">
-              <img
-                src="./click.png"
-                alt=""
-                width="110"
-                height="50"
-                style="object-fit: cover"
-              />
-            </label>
-          </div>
-        </section>
-      </div>
-
-      <div>
-        <div class="checkbox-wrapper">
-          <div class="checkbox-wrapper-start">
-            <!-- Checkbox start -->
-            <div class="checkbox-wrapper-4">
-              <input
-                class="inp-cbx"
-                id="morning2"
-                type="checkbox"
-                name="checkbox"
-              />
-              <label class="cbx" for="morning2"
-                ><span>
-                  <svg width="12px" height="10px">
-                    <use xlink:href="#check-4"></use></svg></span
-              ></label>
-              <svg class="inline-svg">
-                <symbol id="check-4" viewbox="0 0 12 10">
-                  <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                </symbol>
-              </svg>
-            </div>
-            <!-- Checkbox end -->
-            <div>
-              <p class="term">6 oylik</p>
-              <p class="prosent">-44%</p>
-              <p class="price">99 900 UZS <span>179 000 UZS</span></p>
-            </div>
-          </div>
-          <h2 class="month-price">16 600 UZS/oy</h2>
-        </div>
-
-        <section class="payment-section">
-          <div class="payment-section-wrapper radio">
-            <input id="radio-3" name="radio" type="radio" />
-            <label for="radio-3" class="radio-label">
-              <img
-                src="./payme.png"
-                alt=""
-                width="110"
-                height="50"
-                style="object-fit: cover"
-            /></label>
-          </div>
-
-          <div class="payment-section-wrapper radio">
-            <input id="radio-4" name="radio" type="radio" />
-            <label for="radio-4" class="radio-label">
-              <img
-                src="./click.png"
-                alt=""
-                width="110"
-                height="50"
-                style="object-fit: cover"
-              />
-            </label>
-          </div>
-        </section>
-      </div>
-
-      <div>
-        <div class="checkbox-wrapper">
-          <div class="checkbox-wrapper-start">
-            <!-- Checkbox start -->
-            <div class="checkbox-wrapper-4">
-              <input
-                class="inp-cbx"
-                id="morning3"
-                type="checkbox"
-                name="checkbox"
-              />
-              <label class="cbx" for="morning3"
-                ><span>
-                  <svg width="12px" height="10px">
-                    <use xlink:href="#check-4"></use></svg></span
-              ></label>
-              <svg class="inline-svg">
-                <symbol id="check-4" viewbox="0 0 12 10">
-                  <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                </symbol>
-              </svg>
-            </div>
-            <!-- Checkbox end -->
-            <div>
-              <p class="term">1 oylik</p>
-            </div>
-          </div>
-          <h2 class="month-price">29 900 UZS/oy</h2>
-        </div>
-
-        <section class="payment-section">
-          <div class="payment-section-wrapper radio">
-            <input id="radio-5" name="radio" type="radio" />
-            <label for="radio-5" class="radio-label">
-              <img
-                src="./payme.png"
-                alt=""
-                width="110"
-                height="50"
-                style="object-fit: cover"
-            /></label>
-          </div>
-
-          <div class="payment-section-wrapper radio">
-            <input id="radio-6" name="radio" type="radio" />
-            <label for="radio-6" class="radio-label">
-              <img
-                src="./click.png"
-                alt=""
-                width="110"
-                height="50"
-                style="object-fit: cover"
-              />
-            </label>
-          </div>
-        </section>
-      </div>
-    </div>
-
-    <div class="checkbox-container description">
-      <div class="description-wrapper">
-        <i class="fa-solid fa-rectangle-ad"></i>
         <div>
-          <h3 class="description-title">Reklamalarsiz</h3>
-          <p class="description-subtitle">
-            Ilovadan foydalanganda sizda reklamalar umuman ko'rinmaydi
-          </p>
-        </div>
-        <i class="fa-solid fa-chevron-right"></i>
-      </div>
+          <div class="checkbox-wrapper">
+            <div class="checkbox-wrapper-start">
+              <!-- Checkbox start -->
+              <div class="checkbox-wrapper-4">
+                <input
+                  class="inp-cbx"
+                  id="morning2"
+                  type="checkbox"
+                  name="checkbox"
+                />
+                <label class="cbx" for="morning2"
+                  ><span>
+                    <svg width="12px" height="10px">
+                      <use xlink:href="#check-4"></use></svg></span
+                ></label>
+                <svg class="inline-svg">
+                  <symbol id="check-4" viewbox="0 0 12 10">
+                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                  </symbol>
+                </svg>
+              </div>
+              <!-- Checkbox end -->
+              <div>
+                <p class="term">6 oylik</p>
+                <p class="prosent">-44%</p>
+                <p class="price">99 900 UZS <span>179 000 UZS</span></p>
+              </div>
+            </div>
+            <h2 class="month-price">16 600 UZS/oy</h2>
+          </div>
 
-      <div class="description-wrapper">
-        <i class="fa-solid fa-rectangle-ad"></i>
+          <section class="payment-section">
+            <div class="payment-section-wrapper radio">
+              <input id="radio-4" name="radio" type="radio" />
+              <label for="radio-4" class="radio-label">
+                <img
+                  src="./payme.png"
+                  alt=""
+                 width="60"
+                  height="40"
+                  style="object-fit: cover"
+              /></label>
+            </div>
+
+            <div class="payment-section-wrapper radio">
+              <input id="radio-5" name="radio" type="radio" />
+              <label for="radio-5" class="radio-label">
+                <img
+                  src="./click.png"
+                  alt=""
+                  width="60"
+                  height="40"
+                  style="object-fit: cover"
+                />
+              </label>
+            </div>
+
+
+            <div class="payment-section-wrapper radio">
+              <input id="radio-6" name="radio" type="radio" />
+              <label for="radio-6" class="radio-label">
+                <img
+                  src="./Uzum.png"
+                  alt=""
+                  width="60"
+                  height="40"
+                  style="object-fit: cover"
+                />
+              </label>
+            </div>
+          </section>
+        </div>
+
         <div>
-          <h3 class="description-title">Reklamalarsiz</h3>
-          <p class="description-subtitle">
-            Ilovadan foydalanganda sizda reklamalar umuman ko'rinmaydi
-          </p>
+          <div class="checkbox-wrapper">
+            <div class="checkbox-wrapper-start">
+              <!-- Checkbox start -->
+              <div class="checkbox-wrapper-4">
+                <input
+                  class="inp-cbx"
+                  id="morning3"
+                  type="checkbox"
+                  name="checkbox"
+                />
+                <label class="cbx" for="morning3"
+                  ><span>
+                    <svg width="12px" height="10px">
+                      <use xlink:href="#check-4"></use></svg></span
+                ></label>
+                <svg class="inline-svg">
+                  <symbol id="check-4" viewbox="0 0 12 10">
+                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                  </symbol>
+                </svg>
+              </div>
+              <!-- Checkbox end -->
+              <div>
+                <p class="term">1 oylik</p>
+              </div>
+            </div>
+            <h2 class="month-price">29 900 UZS/oy</h2>
+          </div>
+
+          <section class="payment-section"  style="padding-bottom: 15px;">
+            <div class="payment-section-wrapper radio">
+              <input id="radio-7" name="radio" type="radio" />
+              <label for="radio-7" class="radio-label">
+                <img
+                  src="./payme.png"
+                  alt=""
+                  width="60"
+                  height="40"
+                  style="object-fit: cover"
+              /></label>
+            </div>
+
+            <div class="payment-section-wrapper radio">
+              <input id="radio-8" name="radio" type="radio" />
+              <label for="radio-8" class="radio-label">
+                <img
+                  src="./click.png"
+                  alt=""
+                  width="60"
+                  height="40"
+                  style="object-fit: cover"
+                />
+              </label>
+            </div>
+
+            <div class="payment-section-wrapper radio">
+              <input id="radio-9" name="radio" type="radio" />
+              <label for="radio-9" class="radio-label">
+                <img
+                  src="./Uzum.png"
+                  alt=""
+                  width="60"
+                  height="40"
+                  style="object-fit: cover"
+                />
+              </label>
+            </div>
+          </section>
         </div>
-        <i class="fa-solid fa-chevron-right"></i>
       </div>
 
-      <div class="description-wrapper">
-        <i class="fa-solid fa-rectangle-ad"></i>
-        <div>
-          <h3 class="description-title">Reklamalarsiz</h3>
-          <p class="description-subtitle">
-            Ilovadan foydalanganda sizda reklamalar umuman ko'rinmaydi
-          </p>
+      <div class="checkbox-container description">
+        <div class="description-wrapper">
+          <i class="fa-solid fa-rectangle-ad"></i>
+          <div>
+            <h3 class="description-title">Reklamalarsiz</h3>
+            <p class="description-subtitle">
+              Ilovadan foydalanganda sizda reklamalar umuman ko'rinmaydi
+            </p>
+          </div>
+          <i class="fa-solid fa-chevron-right"></i>
         </div>
-        <i class="fa-solid fa-chevron-right"></i>
+
+        <div class="description-wrapper">
+          <i class="fa-solid fa-rectangle-ad"></i>
+          <div>
+            <h3 class="description-title">Reklamalarsiz</h3>
+            <p class="description-subtitle">
+              Ilovadan foydalanganda sizda reklamalar umuman ko'rinmaydi
+            </p>
+          </div>
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+
+        <div class="description-wrapper">
+          <i class="fa-solid fa-rectangle-ad"></i>
+          <div>
+            <h3 class="description-title">Reklamalarsiz</h3>
+            <p class="description-subtitle">
+              Ilovadan foydalanganda sizda reklamalar umuman ko'rinmaydi
+            </p>
+          </div>
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+
+        <div class="description-wrapper">
+          <i class="fa-solid fa-rectangle-ad"></i>
+          <div>
+            <h3 class="description-title">Reklamalarsiz</h3>
+            <p class="description-subtitle">
+              Ilovadan foydalanganda sizda reklamalar umuman ko'rinmaydi
+            </p>
+          </div>
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+
+        <div class="description-wrapper">
+          <i class="fa-solid fa-rectangle-ad"></i>
+          <div>
+            <h3 class="description-title">Reklamalarsiz</h3>
+            <p class="description-subtitle">
+              Ilovadan foydalanganda sizda reklamalar umuman ko'rinmaydi
+            </p>
+          </div>
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
       </div>
 
-      <div class="description-wrapper">
-        <i class="fa-solid fa-rectangle-ad"></i>
-        <div>
-          <h3 class="description-title">Reklamalarsiz</h3>
-          <p class="description-subtitle">
-            Ilovadan foydalanganda sizda reklamalar umuman ko'rinmaydi
-          </p>
-        </div>
-        <i class="fa-solid fa-chevron-right"></i>
-      </div>
-
-      <div class="description-wrapper">
-        <i class="fa-solid fa-rectangle-ad"></i>
-        <div>
-          <h3 class="description-title">Reklamalarsiz</h3>
-          <p class="description-subtitle">
-            Ilovadan foydalanganda sizda reklamalar umuman ko'rinmaydi
-          </p>
-        </div>
-        <i class="fa-solid fa-chevron-right"></i>
-      </div>
-    </div>
-
-    <footer class="site-footer">
-      <button class="price-button">
-        <span class="price-text"></span> Obuna bo'lish
-      </button>
-    </footer>
+      <footer class="site-footer">
+        <a href="" class="price-link">
+          <button class="price-button">
+            <span class="price-text"></span> Obuna bo'lish
+          </button>
+        </a>
+      </footer>
+    </form>
 
     <script>
       const elCheckboxes = document.querySelectorAll(".inp-cbx");
@@ -622,24 +670,26 @@
       const elPayments = document.querySelectorAll(".payment-section");
       const elPaymentButton = document.querySelector(".price-button");
       const elPaymentButtonText = document.querySelector(".price-text");
+      const elPriceLink = document.querySelector(".price-link");
 
       elCheckboxes.forEach((checkbox, index) => {
         checkbox.addEventListener("change", () => {
-          // Remove 'checked' state and selected class from other checkboxes
           elCheckboxes.forEach((cb, i) => {
             if (cb !== checkbox) {
               cb.checked = false;
               elTerms[i].classList.remove("selected");
               elMonthPrice[i].classList.remove("selected");
               elPayments[i].style.display = "none";
-              elPaymentButton.style.fontSize = "13,3px";
+              elPaymentButton.style.fontSize = "13.3px";
+              elPaymentButtonText.textContent = "";
             }
           });
 
-          // Add 'selected' class to the current term if checked
           if (checkbox.checked) {
             if (index === 0) {
               elPaymentButtonText.textContent = "129 990 UZS";
+              elPriceLink.href =
+                "https://my.click.uz/services/pay?merchant_id=26420&service_id=34442&transaction_param=Qiblah&additional_param3=%user_id%&amount=%1000&additional_param4=%umrbod";
             } else if (index === 1) {
               elPaymentButtonText.textContent = "99 990 UZS";
             } else {
@@ -655,6 +705,11 @@
             elPayments[index].style.display = "none";
           }
         });
+      });
+
+      const elForm = document.querySelector("form");
+      elForm.addEventListener("submit", function (event) {
+        event.preventDefault();
       });
     </script>
   </body>
