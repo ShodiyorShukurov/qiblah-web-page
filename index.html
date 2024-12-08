@@ -34,6 +34,7 @@
         margin: 0;
         background-color: #fdf8e9;
         padding: 0 15px;
+        padding-bottom: 30px;
         font-family: "Nunito", sans-serif;
         font-optical-sizing: auto;
         font-weight: 400;
@@ -189,7 +190,6 @@
         font-weight: 400;
         margin: 0;
         color: #b9b9bd;
-
       }
 
       .term.selected {
@@ -257,10 +257,100 @@
         font-size: 12px;
         color: #a2a3a8;
       }
+
+      .payment-section {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        align-items: center;
+        margin: 15px 0;
+      }
+
+      .payment-section-wrapper {
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        padding: 6px;
+        border-radius: 10px;
+      }
+
+      .radio {
+        input[type="radio"] {
+          position: absolute;
+          opacity: 0;
+          + .radio-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &:before {
+              content: "";
+              background: #fff;
+              border-radius: 100%;
+              border: 1px solid #c0c1c4;
+              display: inline-block;
+              width: 18px;
+              height: 18px;
+              position: relative;
+              top: 0px;
+              vertical-align: top;
+              cursor: pointer;
+              text-align: center;
+              transition: all 250ms ease;
+            }
+          }
+          &:checked {
+            + .radio-label {
+              &:before {
+                background-color: #fe8c67;
+                box-shadow: inset 0 0 0 4px #fff;
+              }
+            }
+          }
+          &:focus {
+            + .radio-label {
+              &:before {
+                outline: none;
+                border-color: #fe8c67;
+              }
+            }
+          }
+          &:disabled {
+            + .radio-label {
+              &:before {
+                box-shadow: inset 0 0 0 4px #f4f4f4;
+                border-color: darken(#f4f4f4, 25%);
+                background: darken(#f4f4f4, 25%);
+              }
+            }
+          }
+          + .radio-label {
+            &:empty {
+              &:before {
+                margin-right: 0;
+              }
+            }
+          }
+        }
+      }
+
+      .price-button {
+        width: 100%;
+        padding: 10px 0;
+        margin-bottom: 20px;
+        background-color: #fe8c67;
+        border: none;
+        border-radius: 10px;
+        color: #fff;
+      }
     </style>
   </head>
   <body>
-    <img src="" alt="" />
+    <img
+      src="./image.png"
+      alt=""
+      width="100"
+      style="margin: 0 auto; margin-bottom: 20px"
+    />
     <h1>Lalu PREMIUM</h1>
     <div class="checkbox-container">
       <div class="checkbox-wrapper">
@@ -356,7 +446,6 @@
     </div>
 
     <div class="checkbox-container description">
-
       <div class="description-wrapper">
         <i class="fa-solid fa-rectangle-ad"></i>
         <div>
@@ -401,8 +490,46 @@
         <i class="fa-solid fa-chevron-right"></i>
       </div>
 
+      <div class="description-wrapper">
+        <i class="fa-solid fa-rectangle-ad"></i>
+        <div>
+          <h3 class="description-title">Reklamalarsiz</h3>
+          <p class="description-subtitle">
+            Ilovadan foydalanganda sizda reklamalar umuman ko'rinmaydi
+          </p>
+        </div>
+        <i class="fa-solid fa-chevron-right"></i>
+      </div>
     </div>
 
+    <section class="payment-section">
+      <div class="payment-section-wrapper radio">
+        <input id="radio-1" name="radio" type="radio" />
+        <label for="radio-1" class="radio-label">
+          <img
+            src="./payme.png"
+            alt=""
+            width="110"
+            height="50"
+            style="object-fit: cover"
+        /></label>
+      </div>
+
+      <div class="payment-section-wrapper radio">
+        <input id="radio-2" name="radio" type="radio" />
+        <label for="radio-2" class="radio-label">
+          <img
+            src="./click.png"
+            alt=""
+            width="110"
+            height="50"
+            style="object-fit: cover"
+          />
+        </label>
+      </div>
+    </section>
+
+    <button class="price-button">Obuna bo'lish</button>
     <script>
       const elCheckboxes = document.querySelectorAll(".inp-cbx");
       const elTerms = document.querySelectorAll(".term");
