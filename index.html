@@ -512,9 +512,9 @@
             </div>
             <div class="payment-section-wrapper radio">
               <input class="radio-input" id="radio-${
-                index + 1
+                index + 2
               }-2" name="radio-group${index}" type="radio" />
-              <label for="radio-${index + 1}-2" class="radio-label">
+              <label for="radio-${index + 2}-2" class="radio-label">
                 <img
                   src="./click.png"
                   alt="Click"
@@ -526,9 +526,9 @@
             </div>
             <div class="payment-section-wrapper radio">
               <input class="radio-input" id="radio-${
-                index + 1
+                index + 3
               }-3" name="radio-group${index}" type="radio" />
-              <label for="radio-${index + 1}-3" class="radio-label">
+              <label for="radio-${index + 3}-3" class="radio-label">
                 <img
                   src="./Uzum.png"
                   alt="Uzum"
@@ -554,18 +554,19 @@
           const elPaymentButton = document.querySelector(".price-button");
           const elPaymentButtonText = document.querySelector(".price-text");
           const elRadio = document.querySelectorAll(".radio-input");
-          const elRadioGroup1 = document.querySelector("#radio-1-1")
-
-          console.log(elRadio[0])
+          const elRadioGroup1 = document.querySelector("#radio-1-1");
+          const elRadioGroup2 = document.querySelector("#radio-2-1");
+          const elRadioGroup3 = document.querySelector("#radio-3-1");
 
           elPaymentButtonText.innerHTML = prices[0].price;
+          elTerms[0].style.color = "#000";
+          elTerms[0].style.fontWeight = "700";
           elPayments[0].style.display = "flex";
           elPaymentButton.href = `https://checkout.paycom.uz/${btoa(
             `m=6694e9a630c39cf3ab6659df;ac.user_id=%user_id%;ac.tarif=${prices[0].name.slice(
               8
             )};ac.ilova=Qiblah;a=${prices[0].price.slice(0, -3)}`
           )}`;
-
 
           elCheckboxes.forEach((checkbox, index) => {
             checkbox.addEventListener("change", () => {
@@ -593,7 +594,10 @@
                       )};ac.ilova=Qiblah;a=${prices[0].price.slice(0, -3)}`
                     )}`)
                   : "";
-                // index == 0 ? (elRadioGroup1.value = "checked") : "";
+                index == 0
+                  ? (elRadioGroup1.checked = true)
+                  : (elRadioGroup1.checked = false);
+
                 index == 1
                   ? (elPaymentButton.href = `https://checkout.paycom.uz/${btoa(
                       `m=6694e9a630c39cf3ab6659df;ac.user_id=%user_id%;ac.tarif=${prices[1].name.slice(
@@ -602,6 +606,10 @@
                     )}`)
                   : "";
 
+                index == 1
+                  ? (elRadioGroup2.checked = true)
+                  : (elRadioGroup2.checked = false);
+
                 index == 2
                   ? (elPaymentButton.href = `https://checkout.paycom.uz/${btoa(
                       `m=6694e9a630c39cf3ab6659df;ac.user_id=%user_id%;ac.tarif=${prices[2].name.slice(
@@ -609,6 +617,10 @@
                       )};ac.ilova=Qiblah;a=${prices[2].price.slice(0, -3)}`
                     )}`)
                   : "";
+
+                index == 2
+                  ? (elRadioGroup3.checked = true)
+                  : (elRadioGroup3.checked = false);
               } else {
                 elTerms[index].style.color = "#b9b9bd";
                 elTerms[index].style.fontWeight = "400";
@@ -629,9 +641,11 @@
               if (radioCheck.checked) {
                 switch (index) {
                   case 0:
-                    elPaymentButton.href = `https://checkout.paycom.uz/${`btoa(m=6694e9a630c39cf3ab6659df;ac.user_id=%user_id%;ac.tarif=${prices[0].name.slice(
-                      8
-                    )};ac.ilova=Qiblah;a=${prices[0].price.slice(0, -3)})`}`;
+                    elPaymentButton.href = `https://checkout.paycom.uz/${btoa(
+                      `m=6694e9a630c39cf3ab6659df;ac.user_id=%user_id%;ac.tarif=${prices[0].name.slice(
+                        8
+                      )};ac.ilova=Qiblah;a=${prices[0].price.slice(0, -3)}`
+                    )}`;
                     break;
 
                   case 1:
@@ -669,9 +683,11 @@
                     break;
 
                   case 6:
-                    elPaymentButton.href = `https://checkout.paycom.uz/${`btoa(m=6694e9a630c39cf3ab6659df;ac.user_id=%user_id%;ac.tarif=${prices[2].name.slice(
-                      8
-                    )};ac.ilova=Qiblah;a=${prices[2].price.slice(0, -3)})`}`;
+                    elPaymentButton.href = `https://checkout.paycom.uz/${btoa(
+                      `m=6694e9a630c39cf3ab6659df;ac.user_id=%user_id%;ac.tarif=${prices[2].name.slice(
+                        8
+                      )};ac.ilova=Qiblah;a=${prices[2].price.slice(0, -3)}`
+                    )}`;
                     break;
 
                   case 7:
