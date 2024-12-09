@@ -267,7 +267,8 @@
         justify-content: center;
         gap: 10px;
         align-items: center;
-        margin: 15px 0;
+        /* margin: 15px 0; */
+        padding: 15px 0;
       }
 
       .payment-section-wrapper {
@@ -356,18 +357,15 @@
         font-family: "Nunito", sans-serif;
         color: #fff;
         border: none;
+        text-decoration: none;
+        display: block;
+        font-size: 10px;
       }
 
       .price-button span {
         display: block;
         font-weight: 700;
         font-size: 13px;
-      }
-
-      .price-link {
-        text-decoration: none;
-        width: 100%;
-        height: 100%;
       }
     </style>
   </head>
@@ -442,21 +440,19 @@
       </div>
 
       <footer class="site-footer">
-        <a href="" class="price-link" target="_blank">
-          <button class="price-button">
-            <span class="price-text"></span> Obuna bo'lish
-          </button>
+        <a href="" class="price-button" target="_blank">
+          <span class="price-text"></span> Obuna bo'lish
         </a>
       </footer>
     </form>
 
     <script>
+      // Define the string
+      var decodedStringBtoA = "Hello World!";
+
       const API_URL = "https://srvr.qiblah.app/api/v1";
 
       const elForm = document.querySelector("form");
-      elForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-      });
 
       const checkboxContainer = document.querySelector(".checkbox-container");
 
@@ -468,83 +464,87 @@
         prices.forEach((price, index) => {
           wrapper = document.createElement("div");
           wrapper.innerHTML = `
-      <div>
-        <div class="checkbox-wrapper">
-          <div class="checkbox-wrapper-start">
-            <div class="checkbox-wrapper-4">
-              <input
-                class="inp-cbx"
-                id="morning${index + 1}"
-                type="checkbox"
-                name="checkbox${index + 1}"
-                ${index == 0 ? "checked" : ""}
-              />
-              <label class="cbx" for="morning${index + 1}">
-                <span>
-                  <svg width="12px" height="10px">
-                    <use xlink:href="#check-4"></use>
-                  </svg>
-                </span>
+        <div>
+          <div class="checkbox-wrapper">
+            <div class="checkbox-wrapper-start">
+              <div class="checkbox-wrapper-4">
+                <input
+                  class="inp-cbx"
+                  id="morning${index + 1}"
+                  type="checkbox"
+                  name="checkbox${index + 1}"
+                  ${index == 0 ? "checked" : ""}
+                />
+                <label class="cbx" for="morning${index + 1}">
+                  <span>
+                    <svg width="12px" height="10px">
+                      <use xlink:href="#check-4"></use>
+                    </svg>
+                  </span>
+                </label>
+                <svg class="inline-svg">
+                  <symbol id="check-4" viewbox="0 0 12 10">
+                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                  </symbol>
+                </svg>
+              </div>
+              <div class="js-price">
+                <p class="term">${price.name.slice(8) || "N/A"}</p>
+                <p class="price">${price.price || "0"} UZS <span></span></p>
+              </div>
+            </div>
+          </div>
+          <section class="payment-section">
+            <div class="payment-section-wrapper radio" >
+              <input class="radio-input" id="radio-${
+                index + 1
+              }-1" name="radio-group${index}" type="radio"  checked />
+              <label for="radio-${index + 1}-1" class="radio-label">
+                <img
+                  src="./payme.png"
+                  alt="Payme"
+                  width="60"
+                  height="40"
+                  style="object-fit: cover"
+                 checked
+                />
               </label>
-              <svg class="inline-svg">
-                <symbol id="check-4" viewbox="0 0 12 10">
-                  <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                </symbol>
-              </svg>
             </div>
-            <div class="js-price">
-              <p class="term">${price.name.slice(8) || "N/A"}</p>
-              <p class="price">${price.price || "0"} UZS <span></span></p>
+            <div class="payment-section-wrapper radio">
+              <input class="radio-input" id="radio-${
+                index + 1
+              }-2" name="radio-group${index}" type="radio" />
+              <label for="radio-${index + 1}-2" class="radio-label">
+                <img
+                  src="./click.png"
+                  alt="Click"
+                  width="60"
+                  height="40"
+                  style="object-fit: cover"
+                />
+              </label>
             </div>
-          </div>
+            <div class="payment-section-wrapper radio">
+              <input class="radio-input" id="radio-${
+                index + 1
+              }-3" name="radio-group${index}" type="radio" />
+              <label for="radio-${index + 1}-3" class="radio-label">
+                <img
+                  src="./Uzum.png"
+                  alt="Uzum"
+                  width="60"
+                  height="40"
+                  style="object-fit: cover"
+                />
+              </label>
+            </div>
+          </section>
         </div>
-        <section class="payment-section">
-          <div class="payment-section-wrapper radio">
-            <input id="radio-${
-              index + 1
-            }-1" name="radio-group${index}" type="radio"  checked />
-            <label for="radio-${index + 1}-1" class="radio-label">
-              <img
-                src="./payme.png"
-                alt="Payme"
-                width="60"
-                height="40"
-                style="object-fit: cover"
-               
-              />
-            </label>
-          </div>
-          <div class="payment-section-wrapper radio">
-            <input id="radio-${
-              index + 1
-            }-2" name="radio-group${index}" type="radio" />
-            <label for="radio-${index + 1}-2" class="radio-label">
-              <img
-                src="./click.png"
-                alt="Click"
-                width="60"
-                height="40"
-                style="object-fit: cover"
-              />
-            </label>
-          </div>
-          <div class="payment-section-wrapper radio">
-            <input id="radio-${
-              index + 1
-            }-3" name="radio-group${index}" type="radio" />
-            <label for="radio-${index + 1}-3" class="radio-label">
-              <img
-                src="./Uzum.png"
-                alt="Uzum"
-                width="60"
-                height="40"
-                style="object-fit: cover"
-              />
-            </label>
-          </div>
-        </section>
-      </div>
-    `;
+      `;
+
+          elForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+          });
 
           checkboxContainer.appendChild(wrapper);
 
@@ -553,19 +553,25 @@
           const elPayments = document.querySelectorAll(".payment-section");
           const elPaymentButton = document.querySelector(".price-button");
           const elPaymentButtonText = document.querySelector(".price-text");
-          const elPriceLink = document.querySelector(".price-link");
+          const elRadio = document.querySelectorAll(".radio-input");
+          const elRadioGroup1 = document.querySelector("#radio-1-1")
+
+          console.log(elRadio[0])
 
           elPaymentButtonText.innerHTML = prices[0].price;
           elPayments[0].style.display = "flex";
-          elPriceLink.href =
-            "https://checkout.paycom.uz/base64(m=6694e9a630c39cf3ab6659df;ac.user_id=%user_id%;ac.tarif=%oylik;ac.ilova=Qiblah;a=%50000)";
+          elPaymentButton.href = `https://checkout.paycom.uz/${btoa(
+            `m=6694e9a630c39cf3ab6659df;ac.user_id=%user_id%;ac.tarif=${prices[0].name.slice(
+              8
+            )};ac.ilova=Qiblah;a=${prices[0].price.slice(0, -3)}`
+          )}`;
+
 
           elCheckboxes.forEach((checkbox, index) => {
             checkbox.addEventListener("change", () => {
-              console.log(index);
               elCheckboxes.forEach((cb, i) => {
                 if (cb !== checkbox) {
-                  cb.checked = false; 
+                  cb.checked = false;
                   elTerms[i].style.color = "#b9b9bd";
                   elTerms[i].style.fontWeight = "400";
                   elPayments[i].style.display = "none";
@@ -574,33 +580,121 @@
                 }
               });
 
-              // Agar tanlansa, checkboxni faollashtiring
               if (checkbox.checked) {
-                elPaymentButtonText.textContent = prices[index].price;
+                elPaymentButtonText.textContent = prices[index]?.price;
                 elTerms[index].style.color = "#000";
                 elTerms[index].style.fontWeight = "700";
                 elPayments[index].style.display = "flex";
                 elPaymentButton.style.fontSize = "10px";
+                index == 0
+                  ? (elPaymentButton.href = `https://checkout.paycom.uz/${btoa(
+                      `m=6694e9a630c39cf3ab6659df;ac.user_id=%user_id%;ac.tarif=${prices[0].name.slice(
+                        8
+                      )};ac.ilova=Qiblah;a=${prices[0].price.slice(0, -3)}`
+                    )}`)
+                  : "";
+                // index == 0 ? (elRadioGroup1.value = "checked") : "";
+                index == 1
+                  ? (elPaymentButton.href = `https://checkout.paycom.uz/${btoa(
+                      `m=6694e9a630c39cf3ab6659df;ac.user_id=%user_id%;ac.tarif=${prices[1].name.slice(
+                        8
+                      )};ac.ilova=Qiblah;a=${prices[1].price.slice(0, -3)}`
+                    )}`)
+                  : "";
+
+                index == 2
+                  ? (elPaymentButton.href = `https://checkout.paycom.uz/${btoa(
+                      `m=6694e9a630c39cf3ab6659df;ac.user_id=%user_id%;ac.tarif=${prices[2].name.slice(
+                        8
+                      )};ac.ilova=Qiblah;a=${prices[2].price.slice(0, -3)}`
+                    )}`)
+                  : "";
               } else {
                 elTerms[index].style.color = "#b9b9bd";
                 elTerms[index].style.fontWeight = "400";
                 elPayments[index].style.display = "none";
+                elPaymentButton.href = "";
               }
             });
           });
 
-          // Radio tugmalari faqat bitta tanlansin:
-          // const elRadios = wrapper.querySelectorAll(".payment-section-wrapper input[type='radio']");
-          // elRadios.forEach((radio) => {
-          //   radio.addEventListener("change", () => {
-          //     // Boshqa radio tugmalarini o'chirish
-          //     elRadios.forEach((r) => {
-          //       if (r !== radio) {
-          //         r.checked = false;
-          //       }
-          //     });
-          //   });
-          // });
+          elRadio.forEach((radioCheck, index) => {
+            radioCheck.addEventListener("change", () => {
+              elRadio.forEach((cb, i) => {
+                if (cb !== radioCheck) {
+                  cb.checked = false;
+                }
+              });
+
+              if (radioCheck.checked) {
+                switch (index) {
+                  case 0:
+                    elPaymentButton.href = `https://checkout.paycom.uz/${`btoa(m=6694e9a630c39cf3ab6659df;ac.user_id=%user_id%;ac.tarif=${prices[0].name.slice(
+                      8
+                    )};ac.ilova=Qiblah;a=${prices[0].price.slice(0, -3)})`}`;
+                    break;
+
+                  case 1:
+                    elPaymentButton.href = `https://my.click.uz/services/pay?merchant_id=26420&service_id=34442&transaction_param=Qiblah&additional_param3=%user_id%&amount=${prices[0].price.slice(
+                      0,
+                      -3
+                    )}&additional_param4=${prices[0].name.slice(8)}`;
+                    break;
+
+                  case 2:
+                    elPaymentButton.href = `https://www.uzumbank.uz/open-service?serviceId=498617211&ilova=Qiblah&tarif=${prices[0].name.slice(
+                      8
+                    )}&id=%user_id%&amount=${prices[0].price.slice(0, -3)}`;
+                    break;
+
+                  case 3:
+                    elPaymentButton.href = `https://checkout.paycom.uz/${btoa(
+                      `m=6694e9a630c39cf3ab6659df;ac.user_id=%user_id%;ac.tarif=${prices[1].name.slice(
+                        8
+                      )};ac.ilova=Qiblah;a=${prices[1].price.slice(0, -3)}`
+                    )}`;
+                    break;
+
+                  case 4:
+                    elPaymentButton.href = `https://my.click.uz/services/pay?merchant_id=26420&service_id=34442&transaction_param=Qiblah&additional_param3=%user_id%&amount=${prices[1].price.slice(
+                      0,
+                      -3
+                    )}&additional_param4=${prices[1].name.slice(8)}`;
+                    break;
+
+                  case 5:
+                    elPaymentButton.href = `https://www.uzumbank.uz/open-service?serviceId=498617211&ilova=Qiblah&tarif=${prices[1].name.slice(
+                      8
+                    )}&id=%user_id%&amount=${prices[1].price.slice(0, -3)}`;
+                    break;
+
+                  case 6:
+                    elPaymentButton.href = `https://checkout.paycom.uz/${`btoa(m=6694e9a630c39cf3ab6659df;ac.user_id=%user_id%;ac.tarif=${prices[2].name.slice(
+                      8
+                    )};ac.ilova=Qiblah;a=${prices[2].price.slice(0, -3)})`}`;
+                    break;
+
+                  case 7:
+                    elPaymentButton.href = `https://my.click.uz/services/pay?merchant_id=26420&service_id=34442&transaction_param=Qiblah&additional_param3=%user_id%&amount=${prices[2].price.slice(
+                      0,
+                      -3
+                    )}&additional_param4=${prices[2].name.slice(8)}`;
+                    break;
+
+                  case 8:
+                    elPaymentButton.href = `https://www.uzumbank.uz/open-service?serviceId=498617211&ilova=Qiblah&tarif=${prices[2].name.slice(
+                      8
+                    )}&id=%user_id%&amount=${prices[2].price.slice(0, -3)}`;
+                    break;
+
+                  default:
+                    break;
+                }
+              } else {
+                elPaymentButton.href = "";
+              }
+            });
+          });
         });
       }
 
